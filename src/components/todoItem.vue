@@ -1,5 +1,5 @@
 <template>
-  <li>{{ todo }}</li>
+  <li>{{ todo.todo }}</li>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
 
   props: {
     todo: {
-      type: String,
+      type: Object,
       required: true
     }
   }

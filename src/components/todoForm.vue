@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, inject } from "vue";
 
 export default {
   name: "todoForm",
-  emits: ["submitTodo"],
-  setup(_, { emit }) {
+  setup() {
     let todo = ref("");
+    const todos = inject("todos");
 
     function clearInput() {
       todo.value = "";
@@ -28,7 +28,11 @@ export default {
       try {
         if (todo.value === "") throw new Error("The form must have content");
 
-        emit("submitTodo", todo.value);
+        todos.value.push({
+          id: Date.now(),
+          todo: todo.value,
+          status: false
+        });
         clearInput();
       } catch ({ message }) {
         console.log(message);
