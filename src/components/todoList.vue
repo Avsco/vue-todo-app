@@ -1,6 +1,12 @@
 <template>
   <ul>
-    <todo-item v-for="value in todoList" :key="value.id" :todo="value" />
+    <todo-item
+      v-for="value in todoList"
+      :key="value.id"
+      :todo="value"
+      @todo-complete="completeTodo($event)"
+      @todo-delete="deleteTodo($event)"
+    />
   </ul>
 </template>
 
@@ -17,7 +23,15 @@ export default {
   setup() {
     const todoList = inject("todos");
 
-    return { todoList };
+    function deleteTodo(id) {
+      console.log(id);
+    }
+
+    function completeTodo(id) {
+      console.log(id);
+    }
+
+    return { todoList, completeTodo, deleteTodo };
   }
 };
 </script>
