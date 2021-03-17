@@ -22,7 +22,7 @@ export default {
       try {
         if (todo.value === "") throw new Error("The form must have content");
 
-        // emit("submitTodo", todo.value);
+        emit("submitTodo", todo.value);
         clearInput();
       } catch ({ message }) {
         console.log(message);

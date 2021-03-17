@@ -1,19 +1,26 @@
 <template>
   <main>
     <h1>TODO LIST</h1>
-    <input-todo />
+    <todo-form @submit-todo="createTodo($event)" />
   </main>
 </template>
 
 <script>
-import InputTodo from "./components/InputTodo.vue";
+import todoForm from "./components/todoForm.vue";
 
 export default {
+  name: "App",
   components: {
-    InputTodo
+    todoForm
   },
 
-  setup() {}
+  setup() {
+    function createTodo(todo) {
+      console.log(todo);
+    }
+
+    return { createTodo };
+  }
 };
 </script>
 
