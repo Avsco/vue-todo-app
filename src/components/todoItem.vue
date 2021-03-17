@@ -1,8 +1,10 @@
 <template>
-  <li>
-    {{ todo.todo }}
-    <span @click="deleteTodo(todo.id)">V</span>
-    <span @click="markAsComplete(todo.id)">X</span>
+  <li class="item">
+    <span :class="`item__text${todo.status ? '--done' : ''}`">
+      {{ todo.todo }}
+    </span>
+    <span @click="markAsComplete(todo.id)">V</span>
+    <span @click="deleteTodo(todo.id)">X</span>
   </li>
 </template>
 
@@ -31,4 +33,12 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.item {
+  &__text {
+    &--done {
+      text-decoration-line: line-through;
+    }
+  }
+}
+</style>
