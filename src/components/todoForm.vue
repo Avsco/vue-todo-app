@@ -1,6 +1,12 @@
 <template>
   <form @submit.prevent="createTodo">
-    <input v-model.trim="todo" type="text" placeholder="Create a new todo..." />
+    <label for="todo-input"></label>
+    <input
+      id="todo-input"
+      v-model.trim="todo"
+      type="text"
+      placeholder="Create a new todo..."
+    />
     <span @click="clearInput">X</span>
   </form>
 </template>
