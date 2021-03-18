@@ -3,8 +3,8 @@
     <span :class="`item__text${todo.status ? '--done' : ''}`">
       {{ todo.todo }}
     </span>
-    <span @click="markAsComplete(todo.id)">V</span>
-    <span @click="deleteTodo(todo.id)">X</span>
+    <span @click="handlerStatus(todo.id)">V</span>
+    <span @click="hadlerDeleteTodo(todo.id)">X</span>
   </li>
 </template>
 
@@ -20,15 +20,15 @@ export default {
   },
 
   setup(_, { emit }) {
-    function markAsComplete(id) {
+    function handlerStatus(id) {
       emit("todo-complete", id);
     }
 
-    function deleteTodo(id) {
+    function hadlerDeleteTodo(id) {
       emit("todo-delete", id);
     }
 
-    return { markAsComplete, deleteTodo };
+    return { handlerStatus, hadlerDeleteTodo };
   }
 };
 </script>
