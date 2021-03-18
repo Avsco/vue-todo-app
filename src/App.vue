@@ -23,7 +23,7 @@ export default {
 }
 
 :root {
-  --background: #ffab91;
+  --background: #ffccbc;
   --primary-color: #fff;
   --secondary-color: #bf360c;
   --font-color: #000;
