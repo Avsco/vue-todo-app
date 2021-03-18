@@ -1,31 +1,44 @@
 <template>
   <ul>
     <todo-item
-      v-for="value in todoList"
+      v-for="value in listTodoOptions"
       :key="value.id"
       :todo="value"
       @todo-complete="completeTodo($event)"
       @todo-delete="deleteTodo($event)"
     />
   </ul>
-  <!-- <todoListOptions /> -->
+  <div>
+    <span>{{ listTodoOptions.length }}</span>
+    <todoListOptions />
+  </div>
 </template>
 
 <script>
-import { inject, provide } from "vue";
+import { computed, inject, provide, ref } from "vue";
 import todoItem from "./todoItem.vue";
-// import todoListOptions from "./todoListOptions.vue";
+import todoListOptions from "./todoListOptions.vue";
 
 export default {
   name: "todoList",
   components: {
-    todoItem
-    // todoListOptions
+    todoItem,
+    todoListOptions
   },
 
   setup() {
-    provide("option", "all");
-    // let todoList = inject("todos");
+    let todoOption = ref("all");
+    let todoList = inject("todos");
+    provide("showTodo", todoOption);
+
+    const listTodoOptions = computed(() => {
+      if (todoOption.value === "all") return todoList.value;
+      if (todoOption.value === "active")
+        return todoList.value.filter(todo => !todo.status);
+      if (todoOption.value === "completed")
+        return todoList.value.filter(todo => todo.status);
+      return todoList.value;
+    });
 
     function deleteTodo(id) {
       todoList.value = todoList.value.filter(todo => todo.id !== id);
@@ -38,7 +51,7 @@ export default {
       });
     }
 
-    return { todoList, completeTodo, deleteTodo };
+    return { listTodoOptions, completeTodo, deleteTodo };
   }
 };
 </script>
