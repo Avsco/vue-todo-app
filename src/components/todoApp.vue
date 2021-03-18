@@ -31,6 +31,10 @@ export default {
 .todo {
   margin-top: 5rem;
   width: 76vw;
+
+  @media (min-width: 1015px) {
+    width: 60vw;
+  }
 }
 
 .todo__title {
