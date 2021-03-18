@@ -1,6 +1,6 @@
 <template>
   <li class="item">
-    <span>
+    <span class="item__container">
       <span
         type="checkbox"
         :class="`item__done ${todo.status ? 'item__done--selected' : ''}`"
@@ -43,7 +43,14 @@ export default {
 .item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-left: 1rem;
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   &__text {
     display: inline;
@@ -56,9 +63,8 @@ export default {
   }
 
   &__done {
-    display: inline-block;
-    height: 17px;
-    width: 17px;
+    min-height: 17px;
+    min-width: 17px;
     border: 1px solid lightgray;
     border-radius: 50%;
     margin-right: 15px;
