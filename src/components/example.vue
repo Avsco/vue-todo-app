@@ -1,4 +1,6 @@
-<template> </template>
+<template>
+  example
+</template>
 
 <script>
 export default {};
