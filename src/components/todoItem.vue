@@ -45,6 +45,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding-left: 1rem;
+  margin-top: 1.2rem;
 
   &__container {
     display: flex;
