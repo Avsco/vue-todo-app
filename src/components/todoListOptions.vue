@@ -52,7 +52,6 @@ export default {
     padding-left: 15px;
     padding-right: 15px;
     margin: 10px;
-    height: 100%;
     width: 120px;
 
     background-color: transparent;
@@ -66,10 +65,10 @@ export default {
     @media (min-width: 680px) {
       & {
         all: unset;
-        text-transform: capitalize;
         font-weight: 700;
         margin-left: 10px;
         margin-right: 10px;
+        text-transform: capitalize;
       }
     }
 
@@ -80,11 +79,11 @@ export default {
       @media (min-width: 680px) {
         & {
           all: unset;
-          color: var(--secondary-color);
-          text-transform: capitalize;
           font-weight: 700;
           margin-left: 10px;
           margin-right: 10px;
+          color: var(--secondary-color);
+          text-transform: capitalize;
         }
       }
     }
