@@ -1,10 +1,16 @@
 <template>
   <li class="item">
-    <span :class="`item__text${todo.status ? '--done' : ''}`">
-      {{ todo.todo }}
+    <span>
+      <span
+        type="checkbox"
+        :class="`item__done ${todo.status ? 'item__done--selected' : ''}`"
+        @click="handlerStatus(todo.id)"
+      />
+      <p :class="`item__text ${todo.status ? 'item__text--done' : ''}`">
+        {{ todo.todo }}
+      </p>
     </span>
-    <span @click="handlerStatus(todo.id)">V</span>
-    <span @click="hadlerDeleteTodo(todo.id)">X</span>
+    <span class="item__delete" @click="hadlerDeleteTodo(todo.id)" />
   </li>
 </template>
 
@@ -35,9 +41,39 @@ export default {
 
 <style scoped lang="scss">
 .item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+
   &__text {
+    display: inline;
+    font-size: 1.2rem;
+    word-break: break-word;
+
     &--done {
       text-decoration-line: line-through;
+    }
+  }
+
+  &__done {
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin-right: 15px;
+    transition: background-color 300ms ease-in-out;
+
+    &:hover,
+    &--selected {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  &__delete {
+    &:after {
+      content: "\274c";
+      color: #fff;
     }
   }
 }

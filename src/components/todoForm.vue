@@ -1,13 +1,15 @@
 <template>
-  <form @submit.prevent="createTodo">
+  <form @submit.prevent="createTodo" class="form" autocomplete="off">
     <label for="todo-input"></label>
     <input
       id="todo-input"
       v-model.trim="todo"
       type="text"
       placeholder="Create a new todo..."
+      autofocus
+      class="form__input"
     />
-    <span @click="clearInput">X</span>
+    <span v-if="todo" class="form__clear" @click="clearInput">X</span>
   </form>
 </template>
 
@@ -44,4 +46,37 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.form {
+  margin-top: 2rem;
+  width: 100%;
+  height: 4rem;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+
+  &__input,
+  &__clear {
+    height: 100%;
+    color: var(--color);
+  }
+
+  &__input {
+    margin: 0;
+    width: calc(100% - 3rem);
+
+    font-size: 1rem;
+
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+
+  &__clear {
+    display: inline-block;
+    text-align: center;
+    width: 3rem;
+    color: var(--secondary-color);
+  }
+}
+</style>

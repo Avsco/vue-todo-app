@@ -1,17 +1,20 @@
 <template>
-  <ul>
-    <todo-item
-      v-for="value in listTodoOptions"
-      :key="value.id"
-      :todo="value"
-      @todo-complete="completeTodo($event)"
-      @todo-delete="deleteTodo($event)"
-    />
-  </ul>
-  <div>
-    <span>{{ listTodoOptions.length }}</span>
-    <todoListOptions />
-  </div>
+  <article class="list">
+    <ul class="list__todos">
+      <todo-item
+        v-for="value in listTodoOptions"
+        :key="value.id"
+        :todo="value"
+        @todo-complete="completeTodo($event)"
+        @todo-delete="deleteTodo($event)"
+      />
+    </ul>
+    <hr />
+    <div class="list__options">
+      <p>{{ listTodoOptions.length }} items left</p>
+      <todoListOptions />
+    </div>
+  </article>
 </template>
 
 <script>
@@ -56,4 +59,39 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.list {
+  width: 100%;
+  margin-top: 2rem;
+  background: var(--primary-color);
+  border-radius: var(--border-radius);
+
+  hr {
+    border-color: white;
+  }
+
+  &__todos {
+    list-style: none;
+    margin: 0;
+    padding: 1.2rem;
+  }
+
+  &__options {
+    padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    @media (min-width: 680px) {
+      & {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+}
+</style>

@@ -1,7 +1,9 @@
 <template>
-  <h1>TODO LIST</h1>
-  <todo-form />
-  <todo-list />
+  <section class="todo">
+    <h1 class="todo__title">TODO</h1>
+    <todo-form />
+    <todo-list />
+  </section>
 </template>
 
 <script>
@@ -23,4 +25,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.todo {
+  margin-top: 5rem;
+  width: 76vw;
+}
+
+.todo__title {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+</style>
