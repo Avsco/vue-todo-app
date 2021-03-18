@@ -10,14 +10,14 @@ import todoList from "./todoList.vue";
 import { ref, provide } from "vue";
 
 export default {
-  name: "App",
+  name: "todoApp",
   components: {
     todoForm,
     todoList
   },
 
   setup() {
-    const todos = ref([]);
+    let todos = ref([]);
     provide("todos", todos);
   }
 };
