@@ -36,6 +36,6 @@ export default {
 .todo__title {
   color: white;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 </style>

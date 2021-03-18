@@ -69,6 +69,7 @@ export default {
         margin-left: 10px;
         margin-right: 10px;
         text-transform: capitalize;
+        font-family: "Comic Sans MS", Courier, monospace;
       }
     }
 
@@ -84,6 +85,7 @@ export default {
           margin-right: 10px;
           color: var(--secondary-color);
           text-transform: capitalize;
+          font-family: "Comic Sans MS", Courier, monospace;
         }
       }
     }

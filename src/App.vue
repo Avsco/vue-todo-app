@@ -34,6 +34,16 @@ export default {
   margin: 0;
 }
 
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: sans-serif;
+}
+
+p,
+input[type="text"],
+button {
+  font-family: "Comic Sans MS", Courier, monospace;
+}
+
 body {
   margin: 0;
   padding: 0;
