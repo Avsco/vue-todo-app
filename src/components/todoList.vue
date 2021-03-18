@@ -82,10 +82,8 @@ export default {
     padding-right: 3rem;
 
     @media (min-width: 680px) {
-      & {
-        display: flex;
-        justify-content: space-between;
-      }
+      display: flex;
+      justify-content: space-between;
     }
 
     p {
