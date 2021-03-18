@@ -73,7 +73,6 @@ export default {
   &__delete {
     &:after {
       content: "\274c";
-      color: #fff;
     }
   }
 }

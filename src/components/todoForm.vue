@@ -9,7 +9,7 @@
       autofocus
       class="form__input"
     />
-    <span v-if="todo" class="form__clear" @click="clearInput">X</span>
+    <span v-if="todo" class="form__clear" @click="clearInput" />
   </form>
 </template>
 
@@ -76,7 +76,10 @@ export default {
     display: inline-block;
     text-align: center;
     width: 3rem;
-    color: var(--secondary-color);
+
+    &:after {
+      content: "\274c";
+    }
   }
 }
 </style>
