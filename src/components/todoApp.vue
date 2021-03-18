@@ -2,7 +2,7 @@
   <section class="todo">
     <h1 class="todo__title">TODO</h1>
     <todo-form />
-    <todo-list />
+    <todo-list v-if="todos.length !== 0" />
   </section>
 </template>
 
@@ -21,6 +21,8 @@ export default {
   setup() {
     let todos = ref([]);
     provide("todos", todos);
+
+    return { todos };
   }
 };
 </script>
