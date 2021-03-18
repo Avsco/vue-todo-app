@@ -63,13 +63,12 @@ export default {
     outline: none;
 
     @media (min-width: 680px) {
-      & {
-        all: unset;
-        font-weight: 700;
-        margin-left: 10px;
-        margin-right: 10px;
-        text-transform: capitalize;
-      }
+      all: unset;
+      font-weight: 700;
+      margin-left: 10px;
+      margin-right: 10px;
+      text-transform: capitalize;
+      font-family: "Comic Sans MS", Courier, monospace;
     }
 
     &--selected {
@@ -77,14 +76,13 @@ export default {
       background-color: var(--secondary-color);
 
       @media (min-width: 680px) {
-        & {
-          all: unset;
-          font-weight: 700;
-          margin-left: 10px;
-          margin-right: 10px;
-          color: var(--secondary-color);
-          text-transform: capitalize;
-        }
+        all: unset;
+        font-weight: 700;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: var(--secondary-color);
+        text-transform: capitalize;
+        font-family: "Comic Sans MS", Courier, monospace;
       }
     }
   }

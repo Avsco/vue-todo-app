@@ -37,7 +37,7 @@ export default {
         });
         clearInput();
       } catch ({ message }) {
-        console.log(message);
+        alert(message);
       }
     }
 

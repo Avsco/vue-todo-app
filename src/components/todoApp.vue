@@ -31,11 +31,15 @@ export default {
 .todo {
   margin-top: 5rem;
   width: 76vw;
+
+  @media (min-width: 1015px) {
+    width: 60vw;
+  }
 }
 
 .todo__title {
   color: white;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 </style>
